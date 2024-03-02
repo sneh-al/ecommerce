@@ -12,8 +12,13 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero': "url('/hero.jpg')",
+        'ready': "url('/shop.jpg')",
+      },
       colors:{
-        accent: "#97C93E"
+        accent: "#97C93E",
+        accent2: "#fbf8f6"
       }
     },
   },  darkMode: "class",
@@ -21,7 +26,7 @@ export default {
       themes: {
         light: {
           colors: {
-          background: "#fbf8f6", // or DEFAULT
+          background: "#fff", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {
         

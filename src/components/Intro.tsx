@@ -1,11 +1,13 @@
 import { Link } from "@nextui-org/react";
 
+
 const Intro = () => {
   return (
-    <section className="bg-bg flex flex-col md:flex-row justify-center text-balance px-10  gap-10 py-36">
+    <section className="bg-accent2 flex flex-col md:flex-row justify-center text-pretty px-10  gap-10 py-36">
       {productsArray.map((product, index) => (
         <article
           key={index}
+          data-aos="fade-up"
           className="flex flex-col  text-left gap-2 md:max-w-sm"
         >
           <h2 className="text-xl md:text-2xl ">{product.title}</h2>

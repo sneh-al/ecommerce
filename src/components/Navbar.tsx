@@ -23,26 +23,19 @@ import Logo from "./Logo";
     }
     return (
         <NextuiNavbar  shouldHideOnScroll isBordered >
-        <NavbarBrand>
-          <Logo image={image} />
+        <NavbarBrand >
+        <a href="/" className="flex gap-2 items-center justify-center">
+        <Logo image={image} />
           <p className="font-bold text-inherit">Platzi</p>
+        </a>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Features
+        {navbar.map(nav => <NavbarItem isActive={nav.href === window.location.pathname} key={nav.label}>
+            <Link color="foreground" href={nav.href}>
+              {nav.label}
             </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="#" aria-current="page">
-              Customers
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="#">
-              Integrations
-            </Link>
-          </NavbarItem>
+          </NavbarItem>)}
+         
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
@@ -59,3 +52,15 @@ import Logo from "./Logo";
   }
   
   export default Navbar
+
+
+  const navbar =[{
+    href:"/",
+    label:"Home"
+  },{
+    href:"products",
+    label: "Products"
+  },{
+    href:"about",
+    label:"About"
+  }]
