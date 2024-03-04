@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime";
 import Categories from "../components/Categories";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
@@ -7,14 +8,14 @@ import ReccentlyAdded from "../components/ReccentlyAdded";
 
 const Home = () => {
   return (
-    <main className="overflow-hidden">
+    <Fragment>
       <Hero />
       <Intro />
-      <Categories />
+      <Categories isFilter={false} />
       <ReccentlyAdded />
       <Intro2 />
       <Ready />
-    </main>
+    </Fragment>
   );
 };
 

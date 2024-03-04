@@ -26,7 +26,7 @@ import Logo from "./Logo";
         <NavbarBrand >
         <a href="/" className="flex gap-2 items-center justify-center">
         <Logo image={image} />
-          <p className="font-bold text-inherit">Platzi</p>
+          <p className="font-bold text-inherit">Platzi Store</p>
         </a>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -58,9 +58,9 @@ import Logo from "./Logo";
     href:"/",
     label:"Home"
   },{
-    href:"products",
+    href:"/products",
     label: "Products"
   },{
-    href:"about",
+    href:"/about",
     label:"About"
   }]

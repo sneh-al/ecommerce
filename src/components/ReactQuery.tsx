@@ -5,11 +5,11 @@ import { Link } from "@nextui-org/react";
 
 const ReactQuery = () => {
   return (
-    <section className=" query-bg p-5 py-24">
-      <div className="grid text-background grid-cols-1 place-content-center query-bg m-auto max-w-6xl  md:grid-cols-2  gap-6">
+    <section className=" query-bg p-5 py-24 grid place-content-center">
+      <div className="grid min-h-screen text-background grid-cols-1 place-content-center query-bg m-auto max-w-6xl  md:grid-cols-2  gap-6">
         <article
           className="m-auto h-fit order-2 md:order-1"
-          data-aos="flip-down"
+          data-aos="flip-up"
         >
           <p>
             <Link

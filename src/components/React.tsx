@@ -4,8 +4,8 @@ import { Link } from '@nextui-org/react';
 
 const ReactAbout = () => {
   return (
-    <section className=" text-background  react-bg m-auto text-pretty    p-5 py-24">
-   <div className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 gap-6 place-content-center ">
+    <section className=" text-background grid place-content-center  react-bg m-auto text-pretty    p-5 py-24">
+   <div className="max-w-6xl m-auto grid grid-cols-1 md:grid-cols-2 gap-6 place-content-center min-h-screen">
    <article className="">
     <div className="flex" ><img data-aos="fade-up" src={reactLogo} alt="react logo"/>
         <img src={reactRouterLogo} alt="react logo" data-aos="fade-down"/></div>

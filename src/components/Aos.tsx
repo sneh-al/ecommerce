@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 
 const Aos = () => {
   return (
-    <section className="p-5 py-44  aos-bg">
-    <div className="max-w-6xl m-auto grid text-background grid-cols-1 aos-bg md:grid-cols-2 flex-col-reverse md:flex-row gap-6 ">
+    <section className=" aos-bg">
+    <div className="max-w-6xl p-5 py-44  min-h-screen m-auto grid text-background grid-cols-1 aos-bg md:grid-cols-2 flex-col-reverse md:flex-row gap-6 ">
       <article className="">
         <div className="flex max-w-sm flex-wrap items-center justify-center">
           <img data-aos="flip-down" className="" src={framerMotionLogo} alt="react query logo" />

@@ -1,9 +1,8 @@
 
 
 export const createCategoriesSlice = (set) => ({
-  categories: [],
+  categories: null,
   addCategories: (cat) => {
-    console.log('Adding category:', cat);
-    return set(() => ({ categories: cat }))
+     set(() => ({ categories: cat }))
   },
 });

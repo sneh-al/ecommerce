@@ -17,7 +17,9 @@ const Root = () => {
   return (
     <div className="min-h-screen flex flex-col " >
       <Navbar />
-        <Outlet />
+      <main className="overflow-hidden">
+      <Outlet />
+      </main>
         <Divider className="mt-auto" />
         <Footer/>
     </div>

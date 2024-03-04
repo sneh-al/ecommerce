@@ -3,7 +3,7 @@ import { Link } from '@nextui-org/react';
 
 const Platzi = () => {
   return (
-    <section className="grid text-center text-pretty text-background grid-cols-1 platzi-bg m-auto  flex-col-reverse md:flex-row gap-6 p-5 py-24">
+    <section className="grid text-center min-h-screen text-pretty place-content-center  text-background grid-cols-1 platzi-bg  flex-col-reverse md:flex-row gap-6 py-24 p-5">
       <article className="max-w-xl m-auto">
         <div className="flex flex-col  items-center justify-center">
           <img src="/logo.png" alt="axios logo"  data-aos="zoom-in"/>
