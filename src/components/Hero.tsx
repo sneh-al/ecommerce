@@ -1,6 +1,7 @@
 
 import { Button, Image } from '@nextui-org/react';
 import { FaArrowRight } from 'react-icons/fa';
+import Login from './Login';
 const Hero = () => {
   return (
     <section className='relative flex  overflow-hidden bg-hero bg-no-repeat bg-center bg-opacity-5  bg-cover    gap-10 '>

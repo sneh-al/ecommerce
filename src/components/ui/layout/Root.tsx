@@ -8,6 +8,7 @@ import {Divider} from "@nextui-org/react";
 // importing aos
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const Root = () => {
     <div className="min-h-screen flex flex-col " >
       <Navbar />
       <main className="overflow-hidden">
+      <Toaster />
       <Outlet />
       </main>
         <Divider className="mt-auto" />

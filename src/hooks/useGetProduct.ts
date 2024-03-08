@@ -1,26 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../api/fakeStoreAPI";
-import { useBoundStore } from "../store/store";
 
-async function getProducts(limit) {
-  const { data } = await api.get(`/products?limit=${limit}`);
+async function getProducts(id: string) {
+  const { data } = await api.get(`/products/${id}`);
   return data;
 }
-const useGetProducts = (limit) => {
-  const addProducts = useBoundStore((state) => state.addProducts);
-
-  const {
-    data: fetchedData,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["products"],
-    queryFn: () => getProducts(limit),
+const useGetProduct = (id : string ) => useQuery({
+    queryKey: ["product",id],
+    queryFn: () => getProducts(id),
   });
 
-  addProducts(fetchedData);
 
-  return { isLoading, isError };
-};
-
-export default useGetProducts;
+export default useGetProduct;

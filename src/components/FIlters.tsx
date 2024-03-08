@@ -1,10 +1,13 @@
 import { Slider, Input } from "@nextui-org/react";
 import Categories from "./Categories";
 import { SearchIcon } from "./SearchIcon";
+import { FaSearch } from "react-icons/fa";
+
 
 const FIlters = () => {
+
   return (
-    <section className="flex  md:flex-col p-5 py-24">
+    <section className="flex  flex-col p-5 py-24">
       <article>
         <h1 className="sr-only">Search</h1>
         <Input
@@ -17,7 +20,7 @@ const FIlters = () => {
           }}
           placeholder="Type to search..."
           size="sm"
-          startContent={<SearchIcon size={18} />}
+          startContent={<FaSearch/>}
           type="search"
         />
       </article>

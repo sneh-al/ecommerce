@@ -5,5 +5,8 @@ export const createProductsSlice = (set) => ({
     addProducts: (prods) => {
        set(() => ({ products: prods }))
     },
+    filterProducts: (selectedCategories) =>   {
+      set((state) => ({ products: state.products?.filter(product => product.category ===selectedCategories ) }))
+   }
   });
   

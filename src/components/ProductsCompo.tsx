@@ -1,38 +1,37 @@
-import { Card, CardBody, CardFooter } from '@nextui-org/react';
-import useGetProducts from '../hooks/useGetProduct';
-import { useBoundStore } from '../store/store';
+import { Card, CardBody, CardFooter, Image, Link } from "@nextui-org/react";
+import useGetProducts from "../hooks/useGetProducts";
 
 const ProductsCompo = () => {
-    const { isError, isLoading } = useGetProducts();
-    const products = useBoundStore((state) => state.products);
-    console.log(products)
-  
-    if (isLoading) return <div>Consulting the spellbook...</div>;
-    if (isError) return <div>Error retrieving spells</div>;
-  
-  return (
-<div
-className=' columns-2 gap-6 md:columns-3 space-y-6'
->     {products?.map((product) => (
-          <Card
-          isPressable
-            key={product.id}
-          >
-            <CardBody className="grid place-content-center ">
-           <img
-                className='object-contain'
-                alt={product.title}
-                src={product.image}
-                fallbackSrc="https://via.placeholder.com/300x200"
-              />
-            </CardBody>
-            <CardFooter className="text-small  justify-between">
-              <b className="  max-w-20 truncate ">{product.title}</b>
-              <p className="text-default-500 w-fit ">{product.price}</p>
-            </CardFooter>
-          </Card>
-        ))}</div>
-  )
-}
+  const {data, isError, isLoading } = useGetProducts(20);
 
-export default ProductsCompo
+  if (isLoading) return <div>Getting Products...</div>;
+  if (isError) return <div>Error retrieving Products</div>;
+  return (
+    <div className=" columns-1 gap-6 md:columns-3 space-y-6" >
+      { data?.map((product) => (
+        <Card
+        as={Link}
+        data-aos="flip-up"
+      href={`products/${product.id}`}
+        isPressable key={product.id}>
+          <CardBody className="grid place-content-center ">
+            <Image
+              className="object-contain "
+              alt={product.title}
+              src={product.image}
+              fallbackSrc="https://via.placeholder.com/300x200"
+            />
+          </CardBody>
+          <CardFooter className="flex-col text-sm text-left">
+    <div className="flex justify-between ">
+    <p className=" text-sm font-bold  ">{product.title}</p>
+            <p className="text-default-500 w-fit ">{product.price}</p>
+    </div>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
+  );
+};
+
+export default ProductsCompo;

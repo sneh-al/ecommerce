@@ -1,10 +1,10 @@
-import useGetProducts from "../hooks/useGetProduct";
+import useGetProducts from "../hooks/useGetProducts";
 import { Card, CardBody, CardFooter, Image, Link } from "@nextui-org/react";
 import Slider from "react-slick";
 import { useBoundStore } from "../store/store";
 
 const ReccentlyAdded = () => {
-  const { isError, isLoading } = useGetProducts(5);
+  const {data, isError, isLoading } = useGetProducts(5);
   const products = useBoundStore((state) => state.products);
 
   if (isLoading) return <div>Consulting the spellbook...</div>;
@@ -22,7 +22,7 @@ const ReccentlyAdded = () => {
         </Link>
       </header>
       <Slider data-aos="fade-up" {...settings} className="bg-transparnt p-5">
-        {products?.slice(0,10).map((product) => (
+        {data?.map((product) => (
           <Card
             radius="lg"
             className="border-none"

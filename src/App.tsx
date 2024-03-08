@@ -21,6 +21,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Notfound from "./page/Not-found";
 import Products from "./page/Products";
+import Product from "./page/Product";
+import Cart from "./page/Cart";
+import PrivateRoute from "./components/ui/layout/PrivateRoute";
 const queryClient = new QueryClient();
 
 function App() {
@@ -36,12 +39,19 @@ function App() {
               errorElement={<ErrorBoundary />}
               element={<Home />}
             />
-            <Route path="/products" element={<Products />}></Route>
+            <Route path="/products">
+              <Route index element={<Products />} />
+              <Route path=":id" element={<Product />} />
+            </Route>
             <Route
               path="/about"
               errorElement={<ErrorBoundary />}
               element={<About />}
             />
+            <Route element={<PrivateRoute />}>
+              <Route path="/cart" element={<Cart />} />
+            </Route>
+
             <Route
               path="*"
               errorElement={<ErrorBoundary />}
